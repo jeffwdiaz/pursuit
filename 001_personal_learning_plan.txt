@@ -1,0 +1,160 @@
+Personal Learning Plan
+
+My Topic: Building useful learning-related applications using Python.
+Briefly describe the skill or topic you want to learn in the next two weeks and why it matters to you personally or professionally.
+I want to build learning-related applications using Python that I can use over the next 7 months to enhance my learning process. This is important to me because it combines learning a new skill (Python programming) with creating tools that directly support my personal and professional development. It's a practical way to apply my coding knowledge and improve my learning efficiency.
+
+My Research: [List three credible sources and key points to each]
+
+Source 1: Real Python's Tkinter Guide
+URL/Reference: https://realpython.com/python-gui-tkinter/
+Key Point 1: Tkinter is Python's standard GUI library.
+Key Point 2: Tkinter uses widgets and geometry managers (pack, grid, place).
+Key Point 3: Event handling involves binding functions to widget events.
+
+Source 2: The Official Python Tutorial
+URL/Reference: https://docs.python.org/3/tutorial/
+Key Point 1: Python's syntax uses indentation.
+Key Point 2: Python supports data structures like lists, dictionaries, and tuples.
+Key Point 3: Python's extensive standard library provides modules for many tasks.
+
+Source 3: "Make It Stick: The Science of Successful Learning"
+URL/Reference: (Book - no direct URL; ISBN-13: 978-0674729018)
+Key Point 1: Retrieval practice is more effective than re-reading.
+Key Point 2: Spaced repetition improves memory retention.
+Key Point 3: Interleaving enhances learning.
+
+My Learning Roadmap Outline
+
+Timeline
+Days 1-3:  Focus: Python and Tkinter Fundamentals
+    *   Activity 1: Title: Python Basics - Introduction and Data Types
+                  Description: Read and practice examples from sections 1-3.2 of the official Python tutorial.  Focus on: running Python code, data types (numbers, strings, booleans), variables, arithmetic. *Experiment*.
+                  Goal 1: Run Python code interactively and from a script.
+                  Goal 2: Understand int, float, string, and boolean types.
+                  Goal 3: Perform basic arithmetic and string operations.
+                  Stretch Goal: Explore string methods.
+    *   Activity 2: Title: Python Basics - Control Flow
+                  Description: Work through section 4 (up to 4.4) of the official tutorial, `if` and `for` loops. Write small programs. *Write your own examples.*
+                  Goal 1: Write programs using `if`, `elif`, and `else`.
+                  Goal 2: Write programs using `for` loops.
+                  Goal 3: Understand `break` and `continue`.
+                  Stretch Goal: Explore `while` loops.
+    *   Activity 3: Title: Tkinter Introduction - First Window
+                  Description: Read the "Your First GUI Application" and "Layout Management" sections of the Real Python Tkinter tutorial. Create a window with a label ("25:00") and a "Start" button.  Experiment with `pack()`.  *Don't worry about timer logic.*
+                  Goal 1: Create a Tkinter window.
+                  Goal 2: Add a `Label` widget and display "25:00".
+                  Goal 3: Add a `Button` widget.
+                  Goal 4: Use `pack()` to arrange the widgets.
+                  Goal 5: Make the button print "Timer Started!" to the console.
+                  Stretch Goal: Experiment with window sizes and titles.
+
+Days 4-7: Focus: File Handling and Text Storage App
+    *   Activity 1: Title: File Handling in Python
+                  Description: Read "Reading and Writing Files" in the official tutorial. Pay attention to file modes (`'r'`, `'w'`, `'a'`) and the `with` statement.  *Practice.*
+                  Goal 1: Understand file modes (`r`, `w`, `a`, `r+`).
+                  Goal 2: Write text to a file using `write()`.
+                  Goal 3: Read text from a file using `read()` and `readlines()`.
+                  Goal 4: Use the `with` statement.
+                  Stretch Goal: Explore error handling with `try...except`.
+    *   Activity 2: Title: Text App - Interface Design
+                  Description: Design the Tkinter interface. Window with `Entry` (filename), `Text` (contents), "Save", "Load", "New" buttons. *Use `grid()`.*
+                  Goal 1: Create the main window.
+                  Goal 2: Add an `Entry` widget.
+                  Goal 3: Add a `Text` widget.
+                  Goal 4: Add buttons.
+                  Goal 5: Arrange widgets using `grid()`.
+                  Stretch Goal: Add labels.
+    *   Activity 3: Title: Text App - Save Functionality
+                  Description: Implement "Save". Get text from `Text` widget, filename from `Entry`, write to file.  *Include error handling.*
+                  Goal 1: Get text from `Text` widget.
+                  Goal 2: Get filename from `Entry`.
+                  Goal 3: Open file in write mode.
+                  Goal 4: Write text to file.
+                  Goal 5: Close file (or use `with`).
+                  Goal 6: Handle errors (e.g., empty filename).
+    *   Activity 4: Title: Text App - Load Functionality
+                  Description: Implement "Load". Get filename, open file in read mode, read contents, display in `Text`. *Include error handling.*
+                  Goal 1: Get filename.
+                  Goal 2: Open file in read mode.
+                  Goal 3: Read contents.
+                  Goal 4: Display in `Text` widget.
+                  Goal 5: Handle errors (e.g., file not found).
+    *   Activity 5: Title: Text App - Hotkey (Stretch Goal)
+                  Description: Install `keyboard` (`pip install keyboard`). Read documentation, experiment with `keyboard.add_hotkey()`. Implement a hotkey (e.g., Ctrl+Shift+S) for "Save". *Challenging; focus on core first.*
+                  Goal 1: Install `keyboard`.
+                  Goal 2: Understand `keyboard.add_hotkey()`.
+                  Goal 3: Hotkey to trigger a simple function.
+                  Stretch Goal: Connect hotkey to "Save".
+
+Days 8-10: Focus: Syntax Cheat Sheet App
+    *   Activity 1: Title: Data Structure for Syntax
+                  Description: Create a Python dictionary. Keys: topic names (e.g., "for loop"). Values: dictionaries with syntax and explanation. *Start with 5+ entries.*
+                  Goal 1: Create an empty dictionary.
+                  Goal 2: Add 5+ key-value pairs.
+                  Goal 3:  Practice accessing data.
+    *   Activity 2: Title: Cheat Sheet - Interface
+                  Description: Tkinter window, `ttk.Combobox` (topic selection), `Text` (display). *Populate `Combobox` with dictionary keys.*
+                  Goal 1: Create window.
+                  Goal 2: Add `ttk.Combobox`.
+                  Goal 3: Add `Text` widget.
+                  Goal 4: Populate `Combobox`.
+                  Goal 5: Arrange widgets.
+    *   Activity 3: Title: Cheat Sheet - Lookup
+                  Description: Function: get selected topic, retrieve info from dictionary, display in `Text`.  *Handle topic not found.*
+                  Goal 1: Get selected item from `Combobox`.
+                  Goal 2: Retrieve data from dictionary.
+                  Goal 3: Update `Text` widget.
+                  Goal 4: Handle "Topic not found".
+    *   Activity 4: Title: Cheat Sheet - Hotkey
+                  Description: Use `keyboard` for a hotkey (e.g., Ctrl+Shift+F) to display syntax for *at least one* pre-defined topic.
+                  Goal 1: Add hotkey with `keyboard.add_hotkey()`.
+                  Goal 2:  Hotkey displays syntax for one topic.
+                  Stretch Goal: Cycle through topics.
+    *   Activity 5: Title: Cheat Sheet - Display (Optional)
+                  Description:  Explore Tkinter text tagging for better formatting. *Optional and complex; focus on core first.* (https://tkdocs.com/tutorial/text.html)
+                  Goal 1: Understand text tags.
+                  Goal 2: Experiment with colors/fonts.
+
+Days 11-14: Focus: Refinement, Consolidation, and Debugging
+    *   Activity 1: Title: Pomodoro Timer - Core Logic and Enhancements
+                  Description: Implement timer logic (`time.sleep()`), countdown, work/break cycles. Add: customizable intervals (`Entry`, `IntVar`); sound notifications (`playsound`, find sound files); white noise (`Button`, `winsound`, threading); progress bar (`ttk.Progressbar`); task input.
+                  Goal 1: Implement countdown logic.
+                  Goal 2: Implement work/break switching.
+                  Goal 3: Customizable durations.
+                  Goal 4: Sound notifications.
+                  Goal 5: White noise toggle.
+                  Goal 6: Progress bar.
+                  Goal 7: Task Input
+                  Stretch Goal: "Strict mode" (website/app blocking - `psutil`).
+    *   Activity 2: Title: Text Storage App - Refinements
+                  Description: Improve error handling (`try...except`). Add *one* new feature: "New" button, file listing, file deletion.
+                  Goal 1: Improve error handling.
+                  Goal 2: Implement "New" button.
+                  Stretch Goal: File listing/deletion.
+    *   Activity 3: Title: Syntax Cheat Sheet - Refinements and Expansion
+                  Description: Add 10+ more dictionary entries. Refine hotkey, or add search. *Consider persistent storage.*
+                  Goal 1: Add 10+ more entries.
+                  Goal 2: Improve hotkey.
+                  Stretch Goal: Simple search.
+    *   Activity 4: Title: Code Review and Refactoring
+                  Description: Review all code. Improve readability (comments, names, functions), remove redundancy, ensure consistent formatting (PEP 8). *Use `flake8`/`pylint` (optional).*
+                  Goal 1: Review/comment all code.
+                  Goal 2: Refactor redundant code.
+                  Goal 3: Consistent formatting.
+
+Goals
+Goal 1: Create a fully functional Pomodoro timer application with customizable work/break intervals, sound notifications, a white noise option, task input and a visual progress bar.
+Goal 2: Demonstrate proficiency in Python file handling by successfully implementing saving, loading, and (optionally) listing text files within a text storage application, including robust error handling.
+Goal 3: Learn how to integrate external libraries (specifically `keyboard` and `playsound`) to add global hotkey functionality and sound to a Python application.
+
+Key Resources
+Resource 1: Peers and Teachers - Code reviews, debugging, clarification.
+Resource 2: Gemini - Solutions, code snippets, explanations.
+Resource 3: Python and Tkinter Documentation (Official) - Look up functions, methods, modules.
+
+Progress Tracking
+How will you measure your progress and hold yourself accountable?
+    *   Daily Check-ins: Write a brief summary of progress each day.
+    *   Mini-Milestones: Break down tasks into smaller, manageable steps.
+    *   Code Reviews: Schedule at least one code review session.

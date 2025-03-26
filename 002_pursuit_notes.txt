@@ -1,0 +1,21 @@
+How LLM work: Explain LLM as if I was a 6th grade/12 grader/phd
+	Prediction
+	Neural Networks: computational system designed to mimic human brain
+	Transformers: type of neural network. It can process entire sequences of words simultaneously through a mechanism called "attention"
+	Attention: allows model to weight importance of different words in a sentence. helps understand the relationship between words.
+
+Algorithms
+	Builder bots: builds algo bots
+	Teacher/Test bots: tests algo bots
+	Algorithm bots: best one gets chosen, rest are scrapped
+
+Patterns in daily work life:
+	
+Create a diagram: create a workflow diagram that details how you'll analyze the data
+	includes:
+		what data goes in
+		what does the ai learn from this data
+		what personalized output does it create
+		how do users interact with it
+
+Children in school. Create a bot that can find the ones that need help.
