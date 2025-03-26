@@ -1,0 +1,12 @@
+Day 7
+
+Using more LLMs.
+Lots of tools. For very specific needs. Web Development and software is more accessible to everyone. It's like Dreamweaver from Adobe. 
+
+Prompt:
+"Give me advice about healthy eating habits."
+
+Edited prompt:
+Act as a certified nutritionist and provide practical advice about healthy eating habits. Use a clear and informative tone. Structure the response as a bullet-point guide covering healthiest food in each food category. Also balance the health aspects of the foods with the environmental impact that producing those foods has on the planet. The environmental impact to health should be weighted at a 2:1 ratio. Incorporate relevant statistics or expert recommendations where applicable. Keep the response concise (within 200 words). Conclude with a suggestion of the most healthy diet according to scientific studies, not websites. Use available data to identify foods linked to heart disease and omit them from the recommendations. Do not use general terms when describing food. If there are multiple foods in a category, choose the best ones. For example, if there are many sources of protein, only suggest the 2 most healthy ones. If necessary, suggest follow-up questions for further guidance.
+
+

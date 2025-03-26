@@ -1,0 +1,10 @@
+Day 9
+
+Ideas:
+AutoResponse
+. This one seems easier.
+LiftingHelper
+. This one seems a little bit harder and has more personal benefits. 
+	. Lifting Helper
+	. Auto Lift
+	. Form Bot

@@ -1,0 +1,42 @@
+Act as an AI consultant specializing in mobile automation and computer vision to help me design a Tinder automation app. The app should scan faces, analyze them based on predefined preferences, and automate swipes (left or right) accordingly.
+
+Response Structure:
+Tone: Professional but beginner-friendly
+
+Format: Step-by-step guide with bullet points
+
+Depth: Detailed, but clear enough for a beginner to understand
+
+Goal & Context:
+Objective: Provide a roadmap for building the app, including technology choices, implementation steps, and challenges to consider.
+
+Background: I am a beginner in Android development, using Kotlin and Android Studio.
+
+Scope: Cover the setup, face detection, preference-based analysis, and swipe automation.
+
+Requirements & Constraints:
+Important Keywords: Android, Kotlin, TensorFlow Lite (or ML Kit), Accessibility Service, OpenCV, automation
+
+Limitations:
+
+Must be beginner-friendly with no assumptions of prior AI/automation knowledge
+
+Code examples should be well-commented and explained step-by-step
+
+Avoid unnecessary complexity (e.g., no need for advanced neural networks at this stage)
+
+Guidance & Examples:
+Technology Stack: Recommend libraries/frameworks for face detection and automation
+
+Implementation Steps: Provide a structured approach (e.g., setting up Android Studio, integrating ML models, automating UI interactions)
+
+Real-world Example: Show how to process a Tinder face, compare it to preferences, and trigger a swipe
+
+Accuracy & Engagement:
+Terminology: Use clear explanations for technical terms
+
+Challenges & Solutions: Highlight potential obstacles and workarounds
+
+Call to Action: Suggest the next steps I should take to start building the app
+
+This prompt ensures a structured, detailed, and beginner-friendly response while keeping the focus on practical implementation. Would you like to refine any part of it?

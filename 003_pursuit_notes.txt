@@ -1,0 +1,84 @@
+Pursuit Notes - Day 3
+
+Aisa Daniley
+Hasani Blackwell
+
+AI personalization
+
+Video: What is an AI Recommendation Engine?
+	recommendation engines
+	1. data gathering
+		explicit data: likes, purchases, posts
+		implicit data: search history, clicks, etc.
+	2. storage
+	3. analysis
+	4. filtering
+		collaborative filtering: compares users to others that are similar
+		content based filtering: filters based on an items features
+		hybrid filtering: combines both
+	5. feedback loop
+
+	Benefits?
+		better user experience
+		higher customer retention
+		higher revenue
+	challenges:
+		increase in cost and complexity
+		bad recommendations
+		bias
+
+article 1:
+How a recommendation system works
+
+Content-based recommender systems use algorithms to suggest items relevant to user preferences.
+AI algorithms personalize recommendations by matching user profiles and item attributes with desired outcomes.
+The system analyzes past behavior to identify patterns and preferences, making accurate recommendations.
+The role of AI in content recommendations
+
+AI enables recommendation systems to analyze vast amounts of user data, learn preferences, and predict enjoyable content.
+The process involves data collection and analysis, collaborative filtering, content-based filtering, predictive modeling, continuous learning and adaptation, and context-aware recommendations.
+Data collection and analysis
+
+AI-powered systems collect and analyze shopper interactions like clicks, views, and purchase history.
+Natural language processing (NLP) analyzes queries to understand themes and sentiments.
+The system creates detailed user profiles that evolve with each interaction, enabling targeted suggestions.
+Collaborative filtering
+
+This method recommends items by finding similarities between shoppers and items.
+It analyzes user-item interactions and user-user similarities to suggest items users may find intriguing.
+It dynamically broadens the content horizon in a personalized manner.
+Content-based filtering
+
+Content-based filtering analyzes attributes of content to serve relevant recommendations.
+AI uses feature-extraction techniques to understand shopper preferences for specific features, brands, and price ranges.
+Algorithms discern preferences for sophisticated and niche elements, providing tailored suggestions.
+Predictive modeling
+
+Predictive modeling uses machine-learning algorithms to forecast future user behavior based on past interactions.
+It analyzes interaction history to identify patterns and preferences, improving accuracy over time.
+This facilitates a personalized and adaptive consumer experience.
+Continuous learning and adaptation
+
+AI-driven systems continuously learn and adjust to new data, refining suggestions in real time.
+Algorithms track changes and become increasingly accurate through ongoing learning.
+The system can quickly adapt to new user interests.
+Context-aware recommendations
+
+AI considers context like time of day, location, and device type to make intuitive recommendations.
+It incorporates external factors like limited-time offers and seasonal events.
+This dynamic adjustment enhances the content discovery experience.
+Deliver better recommendations with AI
+
+AI technology enhances user engagement and improves perceptions of retail platforms.
+Retailers should leverage AI-powered recommendations to create relevant content suggestions.
+The article concludes with a call to action to utilize their services.
+
+-
+
+Trump administration updates
+officials question court's authority over deportations
+The Trump admin is deporting Venezuelans allegedly linked to organized crime. President Trump said he planned to speak with Vladimir Putin about a potential ceasefire between Russia and Ukraine.
+
+-
+
+If it looks like it was made with ai then, it fails.

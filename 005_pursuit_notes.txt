@@ -1,0 +1,121 @@
+day 5
+
+use chatgpt 4o to create the prompt
+feed the prompt to chatgpt 1o
+
+Anatomy of a Prompt
+- Goal
+- Return Format
+- Warnings
+- Context
+
+Context is very important
+Role setting. Assign a role to the AI
+Show examples of format
+Creativity Temperatures?
+Break up the prompts into steps
+"Explain your thinking"
+"comment lines"
+Set boundaries
+
+A good prompt
+- clear context and background information
+- specific role assignment
+- explicit goals and objectives
+- format preferences
+- tone and style guidance
+- any specific exclusions or limitations
+
+
+
+
+
+Scenario 1:
+
+Goal: I need a recipe for a quick and easy vegetarian dinner. 
+
+Format: The recipe should use USA measurements. The list of ingredients should be at the top. The instructions should be below the ingredients. Only use the ingredients that I provide below. You don't have to use all of them.
+
+Warning: Do not include any animal products. Do not create a complex recipe. Do not create a recipe that takes more than 30 minutes to make.
+
+Context: You are a master chef. You've been a chef for 30 years. Your specialty is recipes that are easy to make. . You are creating a recipe for an 18 year old that just left their parent's house. They don't know how to cook, so be very specific and descriptive.
+
+Here are the ingredients I have: 5 cans of black beans, 2 cans of corn, brown rice, flour, salt, sugar, soy sauce. hot sauce, sriracha, garlic, onions, tomatoes, mushrooms, tofu, canola oil, cumin
+
+
+
+
+The Anatomy of an o1 Prompt
+
+Goal
+I want a list of the best medium-length hikes within two hours of San Francisco.
+
+Each hike should provide a cool and unique adventure, and be lesser known.
+
+Return Format
+For each hike, return the name of the hike as I'd find it on AllTrails, then provide the starting address of the hike, the ending address of the hike, distance, drive time, hike duration, and what makes it a cool and unique adventure.
+
+Warnings
+Be careful to make sure that the name of the trail is correct, that it actually exists, and that the time is correct.
+
+Context Dump
+For context: my girlfriend and I hike a ton! We've done pretty much all of the local SF hikes, whether that's Presidio or Golden Gate Park. We definitely want to get out of town – we did Mount Tam pretty recently, the whole thing from the beginning of the stairs to Stinson – it was really long and we are definitely in the mood for something different this weekend! Ocean views would still be nice. We love delicious food. One thing I loved about the Mt Tam hike is that it ends with a celebration (arriving in town to breakfast!). The old missile silos and stuff near Discovery Point is cool but I've just done that hike probably 20x at this point. We won't be seeing each other for a few weeks (she has to stay in LA for work) so the uniqueness here really counts.
+
+
+
+
+
+How to Write a Great Prompt
+Creating a well-structured prompt ensures clear and accurate responses. Use the following framework to optimize your prompts for the best results:
+
+1. Goal (What You Want to Achieve)
+Clearly define what you need.
+Be specific about the task or request.
+Example: "I want a list of the best medium-length hikes within two hours of San Francisco."
+2. Return Format (How the Response Should Be Structured)
+Specify how you want the information presented.
+Include details like lists, summaries, tables, or structured text.
+Example: "For each hike, return the name, starting and ending addresses, distance, drive time, hike duration, and unique features. Return the top 3."
+3. Warnings (Common Pitfalls to Avoid)
+Highlight potential issues to prevent incorrect results.
+Example: "Ensure the hike names are correct, exist, and that the time estimates are accurate."
+4. Context Dump (Relevant Background Information)
+Provide extra context to help refine the response.
+Mention preferences, constraints, or past experiences.
+Example: "We hike often and have done most SF hikes. We want something unique with ocean views and great food at the end."
+
+
+
+
+
+
+
+
+
+True
+1. The NCAA officially changed their policy of allowing men in women's sports, feb 6
+
+Yes, on February 6, 2025, the NCAA officially changed its policy regarding transgender athletes' participation in women's sports. The updated policy restricts competition in women's sports to student-athletes assigned female at birth
+
+true? Only if you believe that trans women are men.
+
+Unsure
+2. Billions of dollars of fraud waste and abuse has already been found by DOGE.
+
+No, the Department of Government Efficiency (DOGE) has not identified "hundreds of billions" in fraud, waste, and abuse. As of March 2025, DOGE reports approximately $105 billion in estimated savings
+
+False
+3. America gave Ukraine $350 billion dollars
+
+No, the United States has not provided Ukraine with $350 billion in aid. Since Russia's invasion in February 2022, the U.S. has allocated approximately $175 billion in aid to Ukraine across various sectors
+
+
+
+
+
+
+
+
+
+
+

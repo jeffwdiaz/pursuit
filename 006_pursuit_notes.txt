@@ -1,0 +1,222 @@
+Day 6
+
+User: all of your classmates who cram for exams the night before
+
+User Needs:
+Solution:
+Timeline:
+Goals:
+
+
+PROMPT:
+All of my classmates cram for exams the night before
+They need help organizing study time, summarizing notes, and staying focused.
+
+Use the outline below to create a plan. Then, write a clear and convincing pitch. The pitch should be corny. It should be professional, clear, direct and convincing. Then answer the questions below. 
+
+Who is the user or audience you are trying to reach?
+What are their needs?
+What is your solution?
+How long will it take for you to build or implement this solution?
+What are the goals of your solution?
+What are the key results or behavior changes the solution will provide?
+
+
+RESPONSE:
+**Study Smart: The Ultimate Exam Prep Plan**
+
+### **Who is the Audience?**
+
+Our audience consists of students who tend to cram for exams the night before. They struggle with time management, note summarization, and maintaining focus.
+
+### **What Are Their Needs?**
+
+- **Better Organization:** They need a structured approach to studying.
+- **Efficient Note-Taking:** They need concise and effective summaries of material.
+- **Increased Focus:** They need strategies to stay engaged while studying.
+
+### **Our Solution:**
+
+We are introducing the **Study Smart Program**, a structured study plan designed to replace last-minute cramming with a step-by-step, stress-free approach to learning. This plan includes:
+
+- **A Study Schedule:** Breaking down subjects into manageable daily chunks.
+- **Summarization Techniques:** Teaching students how to create concise and effective notes.
+- **Focus Strategies:** Providing methods to reduce distractions and improve concentration.
+
+### **Implementation Timeline:**
+
+This solution can be implemented in **one week**. The program will include daily guided sessions that gradually introduce study techniques.
+
+### **Goals of the Solution:**
+
+- Reduce last-minute cramming.
+- Improve students' retention and understanding of material.
+- Foster better study habits for long-term academic success.
+
+### **Key Results and Expected Behavior Changes:**
+
+- Students will start studying at least **one week before exams** instead of the night before.
+- They will feel **more confident and less stressed** going into exams.
+- Their ability to **retain information long-term** will significantly improve.
+- They will develop a habit of **consistent, structured studying** rather than last-minute cramming.
+
+---
+
+## **The Pitch: Stop Cramming, Start Learning!**
+
+Do you find yourself cramming the night before exams, trying to stuff a semester’s worth of material into your brain in just a few hours? You’re not alone. But let’s be real—cramming doesn’t work. It leads to stress, burnout, and forgetfulness.
+
+Introducing **Study Smart**, the solution that takes the panic out of exam prep. With a simple, easy-to-follow plan, you’ll learn how to break subjects into manageable study chunks, summarize notes effectively, and stay focused without distractions.
+
+In just **one week**, you can transform the way you prepare for exams. No more sleepless nights. No more last-minute panic. Just a smarter, stress-free way to study.
+
+Join us and say goodbye to cramming. Let’s study smart together!
+
+Are you ready to take control of your study time? Sign up today and ace your exams with confidence!
+
+
+RESPONSE:
+
+### **Effective Study Plan for Exam Success**  
+
+#### **1. Organizing Study Time**  
+- Create a **realistic study schedule** at least one week before exams.  
+- Use **time blocking** (45-minute study sessions with 10-minute breaks).  
+- Prioritize **difficult subjects** and space out review sessions.  
+
+#### **2. Summarizing Notes**  
+- **Condense key concepts** into one-page summaries.  
+- Use **diagrams, charts, and color coding** to enhance memory retention.  
+- **Practice active recall** by self-testing instead of passive reading.  
+
+#### **3. Staying Focused**  
+- Study in a **distraction-free environment** (turn off notifications).  
+- Use the **Pomodoro Technique** for sustained focus.  
+- Incorporate **practice questions** and mock exams for better retention.  
+
+---
+
+### **Professional Pitch**  
+
+Many students wait until the night before an exam to study, leading to stress, fatigue, and poor performance. This last-minute approach is ineffective, as cramming overwhelms the brain and reduces long-term retention.  
+
+To address this, we propose a structured **3-step study system** that helps students plan ahead, retain more information, and stay focused. By following a study schedule, summarizing key concepts efficiently, and eliminating distractions, students can improve their comprehension and confidence before exams.  
+
+This solution is **easy to implement immediately** and requires only small habit adjustments. Instead of relying on last-minute studying, students will follow a clear plan to maximize efficiency. The benefits include **better exam performance, reduced stress, and improved long-term learning.**  
+
+By making small changes now, we can transform the way we prepare for exams—leading to **better results with less stress.**  
+
+---
+
+### **Q&A**  
+
+**1. Who is the user or audience you are trying to reach?**  
+- Students who procrastinate and cram before exams.  
+
+**2. What are their needs?**  
+- A structured approach to studying that prevents last-minute panic.  
+
+**3. What is your solution?**  
+- A **3-step study system** focusing on time management, effective note-taking, and sustained focus.  
+
+**4. How long will it take for you to build or implement this solution?**  
+- It can be implemented immediately with small adjustments to daily study habits.  
+
+**5. What are the goals of your solution?**  
+- Help students retain information better, reduce stress, and improve performance.  
+
+**6. What are the key results or behavior changes the solution will provide?**  
+- Students will plan ahead, study effectively, and eliminate distractions, leading to **better exam performance and reduced stress.**
+
+
+Detailed Study Plan for Exam Success
+1. Organizing Study Time
+Proper time management is the foundation of effective studying. Follow these steps to build a structured study routine:
+
+Step 1: Set Up a Study Schedule
+Start at least one week before the exam. If possible, begin even earlier to allow for spaced repetition.
+Allocate specific study hours each day. Aim for 2-3 hours per day, broken into focused sessions.
+Use a planner or digital calendar to outline what topics to study each day.
+Step 2: Use Time Blocking for Efficiency
+Follow the 45-10 method: Study for 45 minutes, then take a 10-minute break.
+Break subjects into smaller tasks (e.g., instead of "Study Biology," list "Review cell structure," "Memorize key functions," etc.).
+Rotate subjects to avoid mental fatigue. For example, switch from math to history for variety.
+Step 3: Prioritize Subjects and Topics
+Identify difficult subjects early and dedicate more time to them.
+Mix new material with review sessions to reinforce learning.
+Leave time for final reviews and practice tests in the last few days.
+2. Summarizing Notes
+Good notes are key to quick and effective revision. Here’s how to create study-friendly summaries:
+
+Step 1: Create One-Page Summaries
+Use bullet points to list the most important concepts.
+Simplify complex information into key takeaways.
+Use headings and subheadings for easy navigation.
+Step 2: Use Visual Learning Techniques
+Convert information into charts, graphs, or mind maps.
+Highlight key terms and formulas in different colors.
+Use mnemonic devices to remember difficult concepts.
+Step 3: Apply Active Recall
+Instead of just reading, quiz yourself regularly.
+Cover up your notes and try to recall the key points from memory.
+Use flashcards or question-and-answer formats to enhance retention.
+3. Staying Focused
+Eliminating distractions and maintaining focus is crucial for productive study sessions.
+
+Step 1: Create a Distraction-Free Study Zone
+Choose a quiet place to study with minimal interruptions.
+Silence notifications and put your phone on “Do Not Disturb.”
+Use noise-canceling headphones or study music (instrumental, white noise).
+Step 2: Use the Pomodoro Technique
+Set a timer for 25 minutes of focused work, followed by a 5-minute break.
+After four sessions, take a longer break of 15-30 minutes.
+Adjust the session length based on personal productivity levels.
+Step 3: Test Yourself with Practice Questions
+Use past exams or online quizzes to simulate real test conditions.
+Answer questions without looking at notes, then check your accuracy.
+Time yourself to build confidence for the actual exam.
+By implementing this structured plan, students can maximize study efficiency, reduce stress, and improve exam performance. With small daily efforts, last-minute cramming will no longer be necessary!
+
+
+
+###
+Products/Tools should cater to specific groups of users.
+
+
+
+
+User: Sister/Accountant
+
+Goals:
+- Explain what AI is and explain key words and phrases.
+- Come up with 3 specific ways that they can use AI to improve their lives.
+-Build a learning roadmap including timeline, goals, and key resources.
+- Prepare an oral presentation that will convince my sister to try using AI and my suggestions. The presentation should be no longer than 90 seconds.
+
+
+PROMPT#1
+
+I need your help crafting an AI learning and implementation plan tailored for my sister, who is an accountant. Assume the role of an AI consultant and educator. Your task is to:
+
+Explain AI Clearly – Provide a concise yet informative explanation of what AI is, including key terms and phrases an accountant should understand. Avoid overly technical jargon and focus on practical relevance.
+
+Identify Practical Use Cases – Suggest three specific ways my sister can use AI to improve her daily work and personal efficiency as an accountant. Focus on using AI to retrieve data from physical paper. Prioritize solutions that are easy to adopt and offer clear benefits, such as automation, data gathering, or decision-making support.
+
+Develop a Learning Roadmap – Create a structured plan with a timeline, key learning goals, and recommended resources (e.g., online courses, tools, articles) to help her build AI literacy and start applying it. Ensure it is practical, achievable, and tailored to her busy schedule. The learning roadmap should not be longer than 1 month.
+
+
+Prepare an oral presentation I will give to my sister. It should be 90 seconds and it should be designed to convince her to explore how she can implement the suggested solutions. Keep the tone engaging, confident
+Prepare a Persuasive Presentation – Write a compelling, 90-second oral presentation designed to convince my sister to explore AI and implement the suggested solutions. Keep the tone engaging, confident, and persuasive while addressing potential concerns or hesitations.
+
+Format & Style:
+
+The explanations should be clear and accessible, avoiding unnecessary complexity.
+The learning roadmap should be structured with bullet points and milestones.
+The presentation should have a natural, conversational flow with a strong opening, persuasive arguments, and a confident closing.
+Keep everything concise and to the point.
+Exclusions & Limitations:
+
+Do not assume my sister has any prior knowledge of AI.
+Avoid overly technical details or abstract theories that do not directly apply to her work.
+Focus on practical applications rather than speculative or futuristic AI concepts.
+Deliver each section separately for clarity.
