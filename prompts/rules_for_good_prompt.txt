@@ -1,0 +1,40 @@
+Rules for Creating a Good ChatGPT Prompt
+1. Define the Structure of the Response
+Tone: Specify the desired tone (e.g., formal, casual, persuasive).
+
+Format: Choose a structure such as an essay, bullet points, or an outline.
+
+Act as: Assign a role to the AI (e.g., expert, critic, consultant).
+
+2. Clarify the Goal and Context
+Objective: Clearly state what you want ChatGPT to achieve (e.g., summarize, explain, generate ideas).
+
+Context: Provide background information or relevant data.
+
+Scope: Define the range or depth of the response.
+
+3. Use Specific Language and Constraints
+Keywords: List important words or phrases to include.
+
+Limitations: Set word limits or character counts.
+
+Language: Indicate if the response should be in a specific language.
+
+4. Guide the AI with Examples and Expectations
+Examples: Provide sample responses or desired structure.
+
+Quotes & Statistics: Request inclusion of relevant quotes or numerical data.
+
+Analogies: Ask for examples to clarify concepts.
+
+5. Ensure Accuracy and Credibility
+Citations: Request sources for factual accuracy.
+
+Counterarguments: Ask for multiple perspectives.
+
+Terminology: Specify industry-specific terms.
+
+6. Encourage Engagement
+Call to Action: Request a conclusion or next steps.
+
+Questions: Prompt follow-up questions for more insights.
