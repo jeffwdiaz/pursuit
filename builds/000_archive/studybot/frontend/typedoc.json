@@ -1,0 +1,12 @@
+{
+  "entryPoints": ["src"],
+  "out": "docs",
+  "exclude": ["**/*.test.ts", "**/*.test.tsx"],
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "theme": "default",
+  "name": "LLM Learning Bot Frontend Documentation",
+  "readme": "README.md",
+  "hideGenerator": true,
+  "sort": ["source-order"]
+} 

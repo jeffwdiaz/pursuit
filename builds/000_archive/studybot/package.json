@@ -1,0 +1,22 @@
+{
+  "name": "llm-learning-bot",
+  "version": "1.0.0",
+  "description": "LLM Learning Bot - Interactive Learning Platform",
+  "scripts": {
+    "start": "concurrently \"npm run start-backend\" \"npm run start-frontend\"",
+    "start-backend": "cd backend && npm start",
+    "start-frontend": "cd frontend && npm start",
+    "build": "npm run build-frontend",
+    "build-frontend": "cd frontend && npm run build",
+    "test": "npm run test-backend && npm run test-frontend",
+    "test-backend": "cd backend && npm test",
+    "test-frontend": "cd frontend && npm test",
+    "test:coverage": "npm run test-backend && cd frontend && npm run test:coverage",
+    "docs": "npm run docs-backend && npm run docs-frontend",
+    "docs-backend": "cd backend && npm run docs",
+    "docs-frontend": "cd frontend && npm run docs"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.1"
+  }
+} 
