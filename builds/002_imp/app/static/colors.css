@@ -1,0 +1,302 @@
+/* Font declarations */
+@font-face {
+    font-family: 'Galano';
+    src: url('/static/fonts/GalanoGrotesqueRegular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Galano';
+    src: url('/static/fonts/GalanoGrotesqueMedium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Galano';
+    src: url('/static/fonts/GalanoGrotesqueBold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Optional: Add italic variants */
+@font-face {
+    font-family: 'Galano';
+    src: url('/static/fonts/GalanoGrotesqueItalic.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Galano';
+    src: url('/static/fonts/GalanoGrotesqueMediumItalic.otf') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Galano';
+    src: url('/static/fonts/GalanoGrotesqueBoldItalic.otf') format('opentype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+:root {
+    /* Main Colors */
+    --primary-purple: #8109f2;
+    --light-purple: #f3e8fd;
+    --dark-purple: #6b0cc9;
+    
+    /* Text Colors */
+    --text-dark: #1a1a1a;
+    --text-light: #ffffff;
+    --text-gray: #4a5568;
+    
+    /* UI Colors */
+    --white: #EEE5E9;
+    --gray-50: #f7fafc;
+    --gray-100: #edf2f7;
+    --blue-500: #3182ce;
+    --blue-600: #2b6cb0;
+    --green-600: #2f855a;
+    --red-600: #c53030;
+    --peach:#F1BF98;
+    --purple:#8109f2;
+    --green:#9DCDC0;
+    --red:#FF3864;
+}
+
+/* Base styles */
+body {
+    background-color: var(--primary-purple) !important;
+    color: var(--text-light);
+    font-family: 'Galano', sans-serif !important;
+    position: relative;
+}
+
+/* Header styles */
+.header-title {
+    color: var(--text-light);
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.header-subtitle {
+    color: var(--text-light);
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+/* Section headers */
+.section-title {
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+/* Form elements */
+.select-input {
+    background-color: var(--white);
+    color: var(--text-dark);
+    font-family: 'Galano', sans-serif;
+}
+
+.select-input:focus {
+    border-color: var(--white);
+    box-shadow: 0 0 0 2px var(--white);
+}
+
+/* Cards */
+.card {
+    background-color: var(--white);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.card-title {
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.card-description {
+    color: var(--text-gray);
+}
+
+/* Quiz section */
+.quiz-title {
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.question-text {
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.option-container {
+    padding: 1rem;
+    border-color: var(--gray-600);
+    background-color: var(--gray-600);
+}
+
+.option-container:hover {
+    border-color: var(--peach);
+    background-color: var(--peach);
+}
+
+.option-selected {
+    border-color: var(--primary-purple) !important;
+    background-color: var(--light-purple) !important;
+}
+
+.option-correct {
+    background-color: #9DCDC0;
+    border-color: #9DCDC0 !important; 
+    border-width: 2px;
+}
+
+.option-incorrect {
+    background-color: #FF3864;
+    border-color: #FF3864 !important;
+    border-width: 2px;
+}
+
+.option-incorrect label {
+    color: white;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary-purple);
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.btn-primary:hover {
+    background-color: var(--dark-purple);
+}
+
+.btn-link {
+    color: var(--primary-purple);
+    font-weight: 500;
+}
+
+.btn-link:hover {
+    color: var(--purple);
+}
+
+.btn-success {
+    color: var(--green-600);
+    font-weight: 500;
+}
+
+.btn-success.disabled {
+    color: #a0aec0;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.btn-danger {
+    color: var(--red);
+    font-weight: 500;
+}
+
+.btn-danger.disabled {
+    color: #a0aec0;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Feedback section */
+.feedback-container {
+    background-color: var(--peach);
+    border-radius: 0.75rem;
+}
+
+.feedback-title {
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.feedback-text {
+    color: var(--text-gray);
+}
+
+/* Radio buttons */
+.radio-button {
+    color: var(--primary-purple);
+}
+
+/* Update text colors for better contrast on purple background */
+h1, h2, h3 {
+    color: var(--text-light);
+}
+
+p {
+    color: var(--text-light);
+}
+
+/* Update card backgrounds for better contrast */
+.bg-white {
+    background-color: var(--white);
+}
+
+/* Update hover states */
+.hover\:shadow-lg:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Update form elements */
+select, input {
+    background-color: var(--white);
+    color: var(--text-dark);
+}
+
+/* Update button styles */
+button {
+    transition: all 0.2s ease-in-out;
+}
+
+/* Rounded corners */
+.rounded {
+    border-radius: 0.1rem;
+}
+
+/* Remove the other rounded classes */
+.rounded-sm {
+    border-radius: 0.25rem;
+}
+
+.rounded-lg {
+    border-radius: 0.75rem;
+}
+
+.rounded-xl {
+    border-radius: 1rem;
+}
+
+/* Imp mascot */
+.imp-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9999;
+    pointer-events: none;
+    width: 200px;
+    height: 200px;
+}
+
+.imp-mascot {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+} 
