@@ -99,7 +99,7 @@ export default class GameScreen extends Screen {
             const isCorrect = gameDataManager.checkAnswer(isSwipeUp, this.currentPair);
             
             if (isCorrect) {
-                gameState.updateScore(1);
+                gameState.updateScore(2); // Reward for correct answer
                 this.updateScore();
                 const isGameComplete = gameDataManager.handleAnswer(true);
                 if (isGameComplete) {
@@ -108,6 +108,8 @@ export default class GameScreen extends Screen {
                     this.loadNextFace();
                 }
             } else {
+                gameState.updateScore(-1); // Penalty for wrong answer
+                this.updateScore();
                 gameDataManager.handleAnswer(false);
                 this.showWrongMessage();
                 setTimeout(() => this.loadNextFace(), 1000);
@@ -140,6 +142,13 @@ export default class GameScreen extends Screen {
         gameDataManager.resetGame();
         this.updateScore();
         this.loadNextFace();
+        // Start the score timer
+        gameState.startScoreTimer((score) => {
+            this.updateScore();
+            if (score <= 0) {
+                this.gameOver('timeout');
+            }
+        });
     }
 
     updateScore() {
@@ -173,6 +182,7 @@ export default class GameScreen extends Screen {
     }
 
     gameOver(reason = 'complete') {
+        gameState.endGame();
         screenManager.showScreen('start');
     }
 } 

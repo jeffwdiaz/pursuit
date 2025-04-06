@@ -1,4 +1,5 @@
 import { gameDataManager } from './gameDataManager.js';
+import { leaderboardManager } from './leaderboardManager.js';
 
 export default class GameState {
     constructor() {
@@ -9,6 +10,7 @@ export default class GameState {
         this.gameMode = 'easy';
         this.isGameOver = false;
         this.scoreTimer = null;
+        this.scoreCallback = null;
     }
 
     loadHighScore() {
@@ -22,15 +24,17 @@ export default class GameState {
 
     startScoreTimer(callback) {
         this.stopScoreTimer();
+        this.scoreCallback = callback;
         this.scoreTimer = setInterval(() => {
-            this.score = Math.max(0, this.score - 1);
-            callback(this.score);
-            
-            if (this.score === 0) {
-                this.endGame();
-                callback(this.score, true); // true indicates game over
+            this.updateScore(-1); // Decrease score by 1 every 2 seconds
+            if (this.scoreCallback) {
+                this.scoreCallback(this.score);
             }
-        }, 2000); // Reduce score every 2 seconds
+            
+            if (this.score <= 0) {
+                this.endGame();
+            }
+        }, 2000);
     }
 
     stopScoreTimer() {
@@ -41,10 +45,13 @@ export default class GameState {
     }
 
     updateScore(points) {
-        this.score += points; // No cap on score
+        this.score = Math.max(0, this.score + points);
         if (this.score > this.highScore) {
             this.highScore = this.score;
             this.saveHighScore();
+        }
+        if (this.scoreCallback) {
+            this.scoreCallback(this.score);
         }
     }
 
@@ -59,6 +66,9 @@ export default class GameState {
         this.score = 10;
         this.isGameOver = false;
         this.highScore = this.loadHighScore();
+        if (this.scoreCallback) {
+            this.scoreCallback(this.score);
+        }
     }
 
     endGame() {
@@ -68,6 +78,8 @@ export default class GameState {
             this.highScore = this.score;
             this.saveHighScore();
         }
+        // Save score to leaderboard
+        leaderboardManager.addScore(this.gameMode, 'Anonymous', this.score);
     }
 }
 
