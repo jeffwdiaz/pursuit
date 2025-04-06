@@ -2,6 +2,7 @@
 @import 'screens/start.css';
 @import 'screens/game.css';
 @import 'screens/leaderboard.css';
+@import 'animations.css';
 
 /* Reset and Base Styles */
 :root {

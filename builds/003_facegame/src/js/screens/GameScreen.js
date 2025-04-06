@@ -1,17 +1,13 @@
 import Screen from './Screen.js';
 import { screenManager } from '../utils/screenManager.js';
 import { gameState } from '../utils/gameState.js';
-import { leaderboardManager } from '../utils/leaderboardManager.js';
 import { gameDataManager } from '../utils/gameDataManager.js';
 
 export default class GameScreen extends Screen {
     constructor() {
         super('game-screen');
-        this.touchStartY = 0;
-        this.touchEndY = 0;
-        this.swipeThreshold = 50;
-        this.isAnimating = false;
         this.currentPair = null;
+        this.isPanning = false;
         this.render();
         this.setupEventListeners();
     }
@@ -20,7 +16,6 @@ export default class GameScreen extends Screen {
         this.container.innerHTML = `
             <header class="game-header">
                 <div class="score">Score: <span id="score">0</span></div>
-                <div class="high-score">High Score: <span id="highScore">0</span></div>
             </header>
 
             <main class="game-main">
@@ -35,62 +30,104 @@ export default class GameScreen extends Screen {
             <div class="game-controls">
                 <button id="exitGame" class="btn-secondary">Exit Game</button>
             </div>
-
-            <div id="gameOverModal" class="modal hidden">
-                <div class="modal-content">
-                    <h2>Game Over!</h2>
-                    <p>Your score: <span id="finalScore">0</span></p>
-                    <p>High score: <span id="finalHighScore">0</span></p>
-                    <p>Result: <span id="gameResult"></span></p>
-                    <button id="playAgain" class="btn-primary">Play Again</button>
-                    <button id="backToMenu" class="btn-secondary">Back to Menu</button>
-                </div>
-            </div>
         `;
 
         // Cache DOM elements
         this.elements = {
             scoreDisplay: this.container.querySelector('#score'),
-            highScoreDisplay: this.container.querySelector('#highScore'),
             nameTop: this.container.querySelector('#nameTop'),
             nameBottom: this.container.querySelector('#nameBottom'),
             faceImage: this.container.querySelector('#faceImage'),
             wrongMessage: this.container.querySelector('#wrongMessage'),
-            gameOverModal: this.container.querySelector('#gameOverModal'),
-            finalScore: this.container.querySelector('#finalScore'),
-            finalHighScore: this.container.querySelector('#finalHighScore'),
-            gameResult: this.container.querySelector('#gameResult'),
-            playAgain: this.container.querySelector('#playAgain'),
-            backToMenu: this.container.querySelector('#backToMenu'),
             exitGame: this.container.querySelector('#exitGame'),
             faceContainer: this.container.querySelector('.face-container')
         };
+
+        // Add touch-action: none to prevent browser's default touch behavior
+        this.elements.faceContainer.style.touchAction = 'none';
+        
+        // Enable hardware acceleration
+        this.elements.faceImage.style.willChange = 'transform';
+        this.elements.faceImage.style.transform = 'translate3d(0, 0, 0)';
     }
 
     setupEventListeners() {
-        // Touch events for swipe
-        this.elements.faceContainer.addEventListener('touchstart', this.handleTouchStart.bind(this));
-        this.elements.faceContainer.addEventListener('touchmove', this.handleTouchMove.bind(this));
-        this.elements.faceContainer.addEventListener('touchend', this.handleTouchEnd.bind(this));
+        // Initialize Hammer.js
+        const hammer = new Hammer(this.elements.faceContainer);
+        
+        // Enable vertical pan
+        hammer.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL });
 
-        // Mouse events for desktop
-        this.elements.faceContainer.addEventListener('mousedown', this.handleMouseDown.bind(this));
-        this.elements.faceContainer.addEventListener('mousemove', this.handleMouseMove.bind(this));
-        this.elements.faceContainer.addEventListener('mouseup', this.handleMouseUp.bind(this));
-        this.elements.faceContainer.addEventListener('mouseleave', this.handleMouseUp.bind(this));
-
-        // Button events
-        this.elements.playAgain.addEventListener('click', () => {
-            this.startNewGame();
+        // Pan start event
+        hammer.on('panstart', () => {
+            this.isPanning = true;
+            this.elements.faceImage.style.transition = 'none';
         });
 
-        this.elements.backToMenu.addEventListener('click', () => {
-            screenManager.showScreen('start');
+        // Pan move event with throttling
+        let lastUpdate = 0;
+        const updateInterval = 1000 / 60; // 60fps
+        hammer.on('panmove', (event) => {
+            const now = performance.now();
+            if (now - lastUpdate >= updateInterval) {
+                this.updateImagePosition(event.deltaY);
+                lastUpdate = now;
+            }
         });
 
+        // Pan end event
+        hammer.on('panend', (event) => {
+            this.isPanning = false;
+            this.handleSwipe(event.velocityY);
+        });
+
+        // Exit button
         this.elements.exitGame.addEventListener('click', () => {
             screenManager.showScreen('start');
         });
+    }
+
+    updateImagePosition(deltaY) {
+        this.elements.faceImage.style.transform = `translate3d(0, ${deltaY}px, 0)`;
+    }
+
+    handleSwipe(velocityY) {
+        const isSwipeUp = velocityY < -0.3; // Threshold for swipe up
+        const isSwipeDown = velocityY > 0.3; // Threshold for swipe down
+
+        if (isSwipeUp || isSwipeDown) {
+            const isCorrect = gameDataManager.checkAnswer(isSwipeUp, this.currentPair);
+            
+            if (isCorrect) {
+                gameState.updateScore(1);
+                this.updateScore();
+                const isGameComplete = gameDataManager.handleAnswer(true);
+                if (isGameComplete) {
+                    this.gameOver('complete');
+                } else {
+                    this.loadNextFace();
+                }
+            } else {
+                gameDataManager.handleAnswer(false);
+                this.showWrongMessage();
+                setTimeout(() => this.loadNextFace(), 1000);
+            }
+        }
+        
+        // Reset position with smooth transition
+        this.elements.faceImage.style.transition = 'transform 0.3s ease-out';
+        this.resetImagePosition();
+    }
+
+    resetImagePosition() {
+        this.elements.faceImage.style.transform = 'translate3d(0, 0, 0)';
+    }
+
+    showWrongMessage() {
+        this.elements.wrongMessage.style.opacity = '1';
+        setTimeout(() => {
+            this.elements.wrongMessage.style.opacity = '0';
+        }, 1000);
     }
 
     show() {
@@ -102,126 +139,14 @@ export default class GameScreen extends Screen {
         gameState.resetGame();
         gameDataManager.resetGame();
         this.updateScore();
-        this.elements.gameOverModal.classList.add('hidden');
         this.loadNextFace();
-        
-        // Start the score timer
-        gameState.startScoreTimer((score, isGameOver) => {
-            this.updateScore();
-            if (isGameOver) {
-                this.gameOver();
-            }
-        });
     }
 
     updateScore() {
         this.elements.scoreDisplay.textContent = gameState.score;
-        this.elements.highScoreDisplay.textContent = gameState.highScore;
     }
 
-    handleTouchStart(event) {
-        if (this.isAnimating) return;
-        this.touchStartY = event.touches[0].clientY;
-    }
-
-    handleTouchMove(event) {
-        if (!this.touchStartY || this.isAnimating) return;
-        event.preventDefault();
-        const currentY = event.touches[0].clientY;
-        const deltaY = currentY - this.touchStartY;
-        this.updateImagePosition(deltaY);
-    }
-
-    handleTouchEnd() {
-        if (this.isAnimating) return;
-        const deltaY = this.touchEndY - this.touchStartY;
-        this.handleSwipe(deltaY);
-        this.touchStartY = null;
-        this.touchEndY = null;
-    }
-
-    handleMouseDown(event) {
-        if (this.isAnimating) return;
-        this.touchStartY = event.clientY;
-        this.elements.faceContainer.style.cursor = 'grabbing';
-    }
-
-    handleMouseMove(event) {
-        if (!this.touchStartY || this.isAnimating) return;
-        event.preventDefault();
-        const deltaY = event.clientY - this.touchStartY;
-        this.updateImagePosition(deltaY);
-    }
-
-    handleMouseUp(event) {
-        if (!this.touchStartY || this.isAnimating) return;
-        const deltaY = event.clientY - this.touchStartY;
-        this.handleSwipe(deltaY);
-        this.touchStartY = null;
-        this.elements.faceContainer.style.cursor = 'grab';
-    }
-
-    updateImagePosition(deltaY) {
-        this.elements.faceImage.style.transform = `translateY(${deltaY}px)`;
-    }
-
-    handleSwipe(deltaY) {
-        const isSwipeUp = deltaY < -this.swipeThreshold;
-        const isSwipeDown = deltaY > this.swipeThreshold;
-
-        if (isSwipeUp || isSwipeDown) {
-            this.isAnimating = true;
-            const isCorrect = gameDataManager.checkAnswer(isSwipeUp, this.currentPair);
-            
-            if (isCorrect) {
-                gameState.updateScore(1);
-                this.updateScore();
-                const isGameComplete = gameDataManager.handleAnswer(true);
-                if (isGameComplete) {
-                    this.gameOver('complete');
-                } else {
-                    this.animateSwipe(isSwipeUp);
-                }
-            } else {
-                gameDataManager.handleAnswer(false);
-                this.showWrongMessage();
-                this.resetImagePosition();
-                setTimeout(() => this.loadNextFace(), 1000);
-            }
-        } else {
-            this.resetImagePosition();
-        }
-    }
-
-    animateSwipe(isSwipeUp) {
-        this.elements.faceContainer.classList.add(isSwipeUp ? 'swiping-up' : 'swiping-down');
-        
-        setTimeout(() => {
-            this.elements.faceContainer.classList.remove('swiping-up', 'swiping-down');
-            this.elements.faceImage.style.transform = '';
-            this.isAnimating = false;
-            this.loadNextFace();
-        }, 1000);
-    }
-
-    resetImagePosition() {
-        this.elements.faceImage.style.transition = 'transform 0.3s ease';
-        this.elements.faceImage.style.transform = '';
-        
-        setTimeout(() => {
-            this.elements.faceImage.style.transition = '';
-            this.isAnimating = false;
-        }, 300);
-    }
-
-    showWrongMessage() {
-        this.elements.wrongMessage.classList.add('show');
-        setTimeout(() => {
-            this.elements.wrongMessage.classList.remove('show');
-        }, 1000);
-    }
-
-    async loadNextFace() {
+    loadNextFace() {
         const pair = gameDataManager.getNextPair();
         if (!pair) {
             this.gameOver('complete');
@@ -244,32 +169,10 @@ export default class GameScreen extends Screen {
     }
 
     getDisplayName(face) {
-        if (gameDataManager.gameMode === 'easy') {
-            return face.firstName;
-        } else {
-            // In hard mode, randomly choose between first and last name
-            return Math.random() < 0.5 ? face.firstName : face.lastName;
-        }
+        return gameDataManager.gameMode === 'easy' ? face.firstName : face.lastName;
     }
 
-    gameOver(reason = 'timeout') {
-        gameState.endGame();
-        
-        // Check if it's a high score
-        if (leaderboardManager.isHighScore(gameState.gameMode, gameState.score)) {
-            const playerName = prompt('Congratulations! You got a high score! Enter your name:') || 'Anonymous';
-            leaderboardManager.addScore(gameState.gameMode, playerName, gameState.score);
-        }
-
-        this.elements.finalScore.textContent = gameState.score;
-        this.elements.finalHighScore.textContent = gameState.highScore;
-        this.elements.gameResult.textContent = reason === 'complete' ? 
-            'Congratulations! You matched all faces!' : 
-            'Time\'s up! Try again to match more faces!';
-        this.elements.gameOverModal.classList.remove('hidden');
-    }
-
-    cleanup() {
-        gameState.stopScoreTimer();
+    gameOver(reason = 'complete') {
+        screenManager.showScreen('start');
     }
 } 
