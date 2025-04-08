@@ -135,8 +135,8 @@
         },
         {
             "id": 20,
-            "firstName": "Fnu",
-            "lastName": "Fahad",
+            "firstName": "Fahad",
+            "lastName": "Fnu",
             "image": "fnu_fahad.jpg",
             "gender": "male"
         },
@@ -177,7 +177,7 @@
         },
         {
             "id": 26,
-            "firstName": "Isaiah",
+            "firstName": "Gabe",
             "lastName": "Johnson",
             "image": "isaiah_johnson.jpg",
             "gender": "male"
@@ -556,8 +556,8 @@
         {
             "id": 80,
             "firstName": "Will",
-            "lastName": "Smith",
-            "image": "will_smith.jpg",
+            "lastName": "Carias",
+            "image": "will_carias.jpg",
             "gender": "male"
         },
         {

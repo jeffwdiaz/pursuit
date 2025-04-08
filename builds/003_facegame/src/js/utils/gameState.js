@@ -28,7 +28,7 @@ export default class GameState {
         this.scoreCallback = callback;
         this.scoreTimer = setInterval(() => {
             console.log('Timer tick - current score:', this.score);
-            this.updateScore(-1); // Decrease score every 200ms
+            this.updateScore(-1); // Decrease score every 2000ms
             if (this.scoreCallback) {
                 this.scoreCallback(this.score);
             }
@@ -36,7 +36,7 @@ export default class GameState {
             if (this.score <= 0) {
                 this.endGame();
             }
-        }, 200); // Changed to 200ms for faster score decrease
+        }, 2000); // Changed to 2000ms for slower score decrease
     }
 
     stopScoreTimer() {

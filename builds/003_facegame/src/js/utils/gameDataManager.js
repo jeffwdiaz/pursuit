@@ -50,11 +50,24 @@ class GameDataManager {
     }
 
     getRandomIncorrectFace(currentFace) {
-        // Filter out the current face from all faces
+        // Filter out the current face and get faces with matching gender
         const possibleFaces = this.allFaces.filter(face => 
-            face.firstName !== currentFace.firstName || 
-            face.lastName !== currentFace.lastName
+            // Different person (not the same first or last name)
+            (face.firstName !== currentFace.firstName || 
+             face.lastName !== currentFace.lastName) &&
+            // Same gender
+            face.gender === currentFace.gender
         );
+
+        // If no faces with matching gender are found (shouldn't happen normally),
+        // fall back to any face except the current one
+        if (possibleFaces.length === 0) {
+            console.warn('No faces found with matching gender, falling back to any face');
+            return this.allFaces.find(face => 
+                face.firstName !== currentFace.firstName || 
+                face.lastName !== currentFace.lastName
+            );
+        }
 
         // Return a random face from the possible faces
         return possibleFaces[Math.floor(Math.random() * possibleFaces.length)];

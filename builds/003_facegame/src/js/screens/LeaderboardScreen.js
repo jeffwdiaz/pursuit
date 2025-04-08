@@ -28,7 +28,6 @@ export default class LeaderboardScreen extends Screen {
 
             <div class="leaderboard-controls">
                 <button id="backButton" class="btn-primary">Back to Menu</button>
-                <button id="clearScores" class="btn-secondary">Clear Scores</button>
             </div>
         `;
 
@@ -37,8 +36,7 @@ export default class LeaderboardScreen extends Screen {
             leaderboardList: this.container.querySelector('#leaderboardList'),
             easyModeToggle: this.container.querySelector('#easyModeToggle'),
             hardModeToggle: this.container.querySelector('#hardModeToggle'),
-            backButton: this.container.querySelector('#backButton'),
-            clearScores: this.container.querySelector('#clearScores')
+            backButton: this.container.querySelector('#backButton')
         };
 
         this.updateLeaderboard();
@@ -55,13 +53,6 @@ export default class LeaderboardScreen extends Screen {
 
         this.elements.backButton.addEventListener('click', () => {
             screenManager.showScreen('start');
-        });
-
-        this.elements.clearScores.addEventListener('click', () => {
-            if (confirm('Are you sure you want to clear all scores for this mode?')) {
-                leaderboardManager.clearScores(this.currentMode);
-                this.updateLeaderboard();
-            }
         });
     }
 
