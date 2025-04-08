@@ -1,16 +1,11 @@
----
-description: 
-globs: 
-alwaysApply: false
----
-{my query (e.g., "the login button still crashes")}
+{my request (e.g., "add a save button")}
 
 ---
 
 Design and implement the request described above using a systematic, validation-driven approach:
 
 1. **Map System Context**:
-   - Explore the codebase structure to locate where the feature belongs.
+   - Explore the codebase structure with `tree -L 4 --gitignore | cat` to locate where the feature belongs.
    - Identify relevant patterns, conventions, or domain models using `codebase_search` to ensure seamless integration.
    - Pinpoint integration points—e.g., UI components, data layers, or APIs—affected by the request.
 

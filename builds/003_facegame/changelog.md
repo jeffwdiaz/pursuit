@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+- Added gender property to person data structure in `data.json`
+- Added support for gender-based game modes and filtering
+
 ### Removed
 - Removed all animations and transitions
 - Removed swipe/drag functionality
