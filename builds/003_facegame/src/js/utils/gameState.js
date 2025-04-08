@@ -4,10 +4,11 @@ import { leaderboardManager } from './leaderboardManager.js';
 export default class GameState {
     constructor() {
         this.score = 10;
+        this.gameMode = 'easy';
+        this.clearAllHighScores(); // Clear any existing high scores
         this.highScore = this.loadHighScore();
         this.currentFace = null;
         this.nextFace = null;
-        this.gameMode = 'easy';
         this.isGameOver = false;
         this.scoreTimer = null;
         this.scoreCallback = null;
@@ -26,7 +27,8 @@ export default class GameState {
         this.stopScoreTimer();
         this.scoreCallback = callback;
         this.scoreTimer = setInterval(() => {
-            this.updateScore(-1); // Decrease score by 1 every 2 seconds
+            console.log('Timer tick - current score:', this.score);
+            this.updateScore(-1); // Decrease score every 200ms
             if (this.scoreCallback) {
                 this.scoreCallback(this.score);
             }
@@ -34,7 +36,7 @@ export default class GameState {
             if (this.score <= 0) {
                 this.endGame();
             }
-        }, 2000);
+        }, 200); // Changed to 200ms for faster score decrease
     }
 
     stopScoreTimer() {
@@ -45,11 +47,32 @@ export default class GameState {
     }
 
     updateScore(points) {
-        this.score = Math.max(0, this.score + points);
-        if (this.score > this.highScore) {
-            this.highScore = this.score;
-            this.saveHighScore();
+        console.log('Score update details:', {
+            currentScore: this.score,
+            pointsToAdd: points,
+            newScore: this.score + points,
+            currentHighScore: this.highScore,
+            gameMode: this.gameMode
+        });
+
+        // Update the current score
+        const newScore = Math.max(0, this.score + points);
+        
+        // Check if this is a new high score
+        if (newScore > this.highScore) {
+            console.log('New high score achieved:', {
+                previousHighScore: this.highScore,
+                newHighScore: newScore,
+                gameMode: this.gameMode
+            });
+            this.highScore = newScore;
+            this.saveHighScore(); // Save to localStorage immediately
         }
+
+        // Update the current score after high score check
+        this.score = newScore;
+
+        // Update the display if callback exists
         if (this.scoreCallback) {
             this.scoreCallback(this.score);
         }
@@ -72,14 +95,43 @@ export default class GameState {
     }
 
     endGame() {
+        // Store the high score achieved during the game
+        const finalScore = Math.max(this.score, this.highScore);
+        
+        console.log('Saving final score to localStorage:', {
+            score: finalScore,
+            currentScore: this.score,
+            currentHighScore: this.highScore,
+            gameMode: this.gameMode
+        });
+        
+        // Save the final score to localStorage
+        localStorage.setItem('lastGameScore', finalScore.toString());
+        
+        // Double check it was saved correctly
+        const savedScore = localStorage.getItem('lastGameScore');
+        console.log('Verifying saved score:', {
+            savedScore,
+            parsedScore: parseInt(savedScore, 10)
+        });
+
         this.stopScoreTimer();
         this.isGameOver = true;
-        if (this.score > this.highScore) {
-            this.highScore = this.score;
-            this.saveHighScore();
-        }
-        // Save score to leaderboard
-        leaderboardManager.addScore(this.gameMode, 'Anonymous', this.score);
+        
+        // Store the final score for leaderboard check
+        this.score = finalScore;
+    }
+
+    clearHighScore() {
+        localStorage.removeItem(`highScore_${this.gameMode}`);
+        this.highScore = 0;
+        console.log('High score cleared for mode:', this.gameMode);
+    }
+
+    clearAllHighScores() {
+        localStorage.removeItem('highScore_easy');
+        localStorage.removeItem('highScore_hard');
+        console.log('All high scores cleared from localStorage');
     }
 }
 

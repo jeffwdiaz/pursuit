@@ -1,33 +1,29 @@
 """
 JSON Data Extractor
 
-This script will handle the extraction of data from JSON (JavaScript Object Notation) files.
+This script will handle the extraction of data from JSON files.
 It will provide the following functionality:
 
 1. Data Extraction:
-   - Parse JSON files of various sizes
+   - Read JSON files
    - Handle nested structures
-   - Process arrays and objects
-   - Support different JSON formats (pretty-printed, minified)
+   - Support different JSON formats
+   - Process large files efficiently
 
 2. Data Transformation:
-   - Flatten nested structures when needed
-   - Convert JSON types to Python types
-   - Handle special JSON values (null, infinity, etc.)
-   - Process date/time formats
+   - Convert data types appropriately
+   - Handle missing values
+   - Clean and normalize data
 
 3. Output:
    - Return data in a standardized format
    - Support different output structures
-   - Include metadata about the extraction
-
-The extractor will use Python's built-in json module and additional libraries for schema validation.
 """
 
 import json
 from typing import Dict, Any
 from datetime import datetime
-from main import BaseExtractor
+from ..main import BaseExtractor
 
 class JSONExtractor(BaseExtractor):
     """

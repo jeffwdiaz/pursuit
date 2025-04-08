@@ -6,9 +6,10 @@ It implements a class-based structure for handling different file types.
 """
 
 from abc import ABC, abstractmethod
-from typing import Dict, Any, Optional, Type
+from typing import Dict, Any, Optional, Type, List
 from datetime import datetime
 import os
+from pathlib import Path
 from extractors.csv_extractor import CSVExtractor
 from extractors.excel_extractor import ExcelExtractor
 from extractors.json_extractor import JSONExtractor
@@ -130,4 +131,59 @@ class ExtractorFactory:
             raise ValueError(f"No extractor found for file type: {file_type}")
             
         # Create and return an instance of the extractor
-        return extractor_class() 
+        return extractor_class()
+
+    @classmethod
+    def scan_directory(cls, directory_path: str) -> List[Dict[str, Any]]:
+        """
+        Scan a directory for supported files and process them.
+        
+        Args:
+            directory_path (str): Path to the directory to scan
+            
+        Returns:
+            List[Dict[str, Any]]: List of processed data from all supported files
+            
+        Raises:
+            FileNotFoundError: If the directory does not exist
+        """
+        # Convert to Path object for better path handling
+        directory = Path(directory_path)
+        
+        if not directory.exists():
+            raise FileNotFoundError(f"Directory not found: {directory_path}")
+            
+        if not directory.is_dir():
+            raise NotADirectoryError(f"Path is not a directory: {directory_path}")
+            
+        results = []
+        
+        # Scan for supported files
+        for file_path in directory.glob("*"):
+            if file_path.is_file():
+                try:
+                    # Try to detect file type
+                    file_type = BaseExtractor.detect_file_type(str(file_path))
+                    
+                    # Create appropriate extractor
+                    extractor = cls.create_extractor(str(file_path))
+                    
+                    # Extract and process data
+                    raw_data = extractor.extract_data(str(file_path))
+                    transformed_data = extractor.transform_data(raw_data)
+                    formatted_data = extractor.format_output(transformed_data)
+                    
+                    # Add file information to metadata
+                    formatted_data["metadata"]["file_name"] = file_path.name
+                    formatted_data["metadata"]["file_path"] = str(file_path)
+                    
+                    results.append(formatted_data)
+                    
+                except ValueError as e:
+                    # Skip unsupported file types
+                    print(f"Skipping unsupported file {file_path.name}: {str(e)}")
+                except Exception as e:
+                    # Log other errors but continue processing
+                    print(f"Error processing file {file_path.name}: {str(e)}")
+                    
+        return results 

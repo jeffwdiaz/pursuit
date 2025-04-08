@@ -56,7 +56,21 @@ class LeaderboardManager {
 
     isHighScore(mode, score) {
         const scores = this.getScores(mode);
-        return scores.length < 10 || score > scores[scores.length - 1].score;
+        const lowestScore = scores.length > 0 ? scores[scores.length - 1].score : 0;
+        const isHigh = scores.length < 10 || score > lowestScore;
+        
+        console.log(`High score check for ${mode} mode:`, {
+            currentScore: score,
+            scoresCount: scores.length,
+            scores: scores,
+            lowestScore: lowestScore,
+            isHighScore: isHigh,
+            reason: scores.length < 10 ? 'Leaderboard not full' : 
+                   score > lowestScore ? 'Score higher than lowest' : 
+                   'Score not high enough'
+        });
+        
+        return isHigh;
     }
 }
 

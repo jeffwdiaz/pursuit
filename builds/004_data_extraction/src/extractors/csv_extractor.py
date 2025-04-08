@@ -23,9 +23,10 @@ It will provide the following functionality:
 The extractor will use Python's built-in csv module and pandas for efficient processing.
 """
 
+import csv
 import pandas as pd
 from typing import Dict, Any
-from src.main import BaseExtractor
+from ..main import BaseExtractor
 
 class CSVExtractor(BaseExtractor):
     """

@@ -2,6 +2,7 @@ import Screen from './Screen.js';
 import { screenManager } from '../utils/screenManager.js';
 import { gameState } from '../utils/gameState.js';
 import { gameDataManager } from '../utils/gameDataManager.js';
+import { leaderboardManager } from '../utils/leaderboardManager.js';
 
 export default class GameScreen extends Screen {
     constructor() {
@@ -97,6 +98,11 @@ export default class GameScreen extends Screen {
 
         if (isSwipeUp || isSwipeDown) {
             const isCorrect = gameDataManager.checkAnswer(isSwipeUp, this.currentPair);
+            console.log('Swipe result:', {
+                isCorrect,
+                currentScore: gameState.score,
+                velocityY
+            });
             
             if (isCorrect) {
                 gameState.updateScore(2); // Reward for correct answer
@@ -152,6 +158,7 @@ export default class GameScreen extends Screen {
     }
 
     updateScore() {
+        console.log('Updating score display:', gameState.score);
         this.elements.scoreDisplay.textContent = gameState.score;
     }
 
@@ -182,7 +189,29 @@ export default class GameScreen extends Screen {
     }
 
     gameOver(reason = 'complete') {
+        console.log('Game over details:', {
+            reason,
+            finalScore: gameState.score,
+            gameMode: gameState.gameMode,
+            highScore: gameState.highScore
+        });
+        
         gameState.endGame();
-        screenManager.showScreen('start');
+        
+        // Check if this is a high score
+        const isHighScore = leaderboardManager.isHighScore(gameState.gameMode, gameState.score);
+        console.log('High score check result:', {
+            isHighScore,
+            currentScore: gameState.score,
+            mode: gameState.gameMode
+        });
+        
+        if (isHighScore) {
+            console.log('Showing name entry screen');
+            screenManager.showScreen('nameEntry');
+        } else {
+            console.log('Returning to start screen - not a high score');
+            screenManager.showScreen('start');
+        }
     }
 } 

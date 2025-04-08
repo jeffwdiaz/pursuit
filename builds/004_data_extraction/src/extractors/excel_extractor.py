@@ -1,32 +1,28 @@
 """
 Excel Data Extractor
 
-This script will handle the extraction of data from Excel files (XLSX/XLS).
+This script will handle the extraction of data from Excel files.
 It will provide the following functionality:
 
 1. Data Extraction:
-   - Read data from multiple sheets
-   - Handle different Excel formats (XLSX, XLS)
-   - Process cell formatting and formulas
-   - Support merged cells and special formats
+   - Read Excel files (.xlsx, .xls)
+   - Handle multiple sheets
+   - Support different Excel versions
+   - Process large files efficiently
 
 2. Data Transformation:
-   - Convert Excel data types to Python types
-   - Handle Excel-specific formats (dates, times, currencies)
-   - Process cell comments and notes
-   - Handle conditional formatting
+   - Convert data types appropriately
+   - Handle missing values
+   - Clean and normalize data
 
 3. Output:
    - Return data in a standardized format
    - Support different output structures
-   - Include metadata about the extraction
-
-The extractor will use openpyxl and pandas for efficient Excel file processing.
 """
 
 import pandas as pd
 from typing import Dict, Any
-from main import BaseExtractor
+from ..main import BaseExtractor
 
 class ExcelExtractor(BaseExtractor):
     """

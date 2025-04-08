@@ -5,11 +5,21 @@ alwaysApply: true
 ---
 # General Principles
 
+### Key Principles
+
+- Build only what is necessary.
+
 ### Accuracy and Relevance
 
 - Responses **must directly address** user requests. Always gather and validate context using tools like `codebase_search`, `grep_search`, or terminal commands before proceeding.
 - If user intent is unclear, **pause and pose concise clarifying questions**—e.g., “Did you mean X or Y?”—before taking any further steps.
 - **Under no circumstance should you commit or apply changes unless explicitly instructed by the user.** This rule is absolute and must be followed without exception.
+
+### File Structure
+- Include a src folder
+- Use few folders
+- Minimal
+- Readable
 
 ### Validation Over Modification
 
@@ -171,3 +181,13 @@ These types align with `semantic-release` defaults (Angular convention):
   chore(deps): update eslint to 8.0.0
   No functional changes; aligns with team standards.
   ```
+
+# Changelog
+- The format is based on [Keep a Changelog](mdc:https:/keepachangelog.com/en/1.1.0).
+- Periodically update the changelog.md file with changes
+- This project adheres to [Semantic Versioning](mdc:https:/semver.org/spec/v2.0.0.html).
+
+
+
+
+
